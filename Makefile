@@ -7,5 +7,7 @@ build:
 test:
 	@mvn clean package
 
-deploy:
+deploy-to-pcf:
 	@cf push moviefun -p target/moviefun.war --random-route
+
+deploy: build deploy-to-pcf
